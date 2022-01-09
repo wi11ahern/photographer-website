@@ -78,6 +78,7 @@ a {
 
 body {
   font-family: "Ruhl", sans-serif;
+  animation: opening 1s ease-in-out;
 }
 
 /* Nav Section */
@@ -154,6 +155,9 @@ nav {
   position: absolute;
   bottom: 0;
   z-index: 0;
+  animation: plant-entrance 1.3s ease-in-out forwards,
+    plant-shake 2.5s infinite ease alternate-reverse 2s;
+  transform-origin: bottom;
 }
 
 .plant1 {
@@ -166,4 +170,32 @@ nav {
   left: 30%;
   height: 80%;
   width: 80%;
+}
+
+/* Animations */
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes plant-entrance {
+  from {
+    transform: translateY(10%) rotateZ(-7deg) rotateX(90deg);
+  }
+  to {
+    transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
+  }
+}
+
+@keyframes plant-shake {
+  from {
+    transform: rotateZ(-3deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
 }
