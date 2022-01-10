@@ -27,7 +27,7 @@ html {
   --header3-font-size: calc(3rem + 1vw);
   --header4-font-size: calc(2.4rem + 1vw);
   --text-font-size: calc(1.5rem + 1vw);
-  --big-text-font-size: calc(2.4rem + 1vw);
+  --big-text-font-size: calc(6rem + 1vw);
   --main-color: #414141;
   --accent-color: #906272;
   --gray-text: #525252;
@@ -295,8 +295,81 @@ nav {
   text-align: center;
 }
 
+/* Contact Section */
+.contact {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-wrapper {
+  flex: 3 1 40rem;
+}
+
+.form-wrapper h2 {
+  margin: 5rem 0rem;
+}
+
+.form-wrapper span {
+  font-size: var(--big-text-font-size);
+  color: var(--accent-color);
+}
+
+.form-wrapper label {
+  display: block;
+}
+
+.form-wrapper input {
+  display: block;
+  margin: 3rem 0rem;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.form-wrapper button {
+  padding: 1rem 8rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+.contact img {
+  flex: 1 1 40rem;
+}
+
+/* Footer Section */
+footer {
+  background: var(--main-color);
+  color: white;
+  display: flex;
+  padding: 3rem 5%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer h4 {
+  flex: 4 1 40rem;
+  font-size: calc(1.4rem + 1vw);
+}
+
+footer ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Media Queries */
-@media screen and (max-width: 842px) {
+@media screen and (max-width: 1044px) {
+  .contact img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 884px) {
   .hero-introduction h2 {
     margin-top: 14rem;
   }
@@ -402,5 +475,27 @@ nav {
 
   .gallery-head {
     display: none;
+  }
+
+  /* Footer Section */
+  .footer ul {
+    order: 1;
+  }
+
+  footer h4 {
+    order: 2;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  html {
+    --header1-font-size: 3rem;
+    --header2-font-size: 5rem;
+    --header3-font-size: 4rem;
+    --header4-font-size: 3rem;
+    --text-font-size: 2.5rem;
+    --big-text-font-size: 8rem;
   }
 }
